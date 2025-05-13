@@ -1,52 +1,33 @@
-// JavaScript to make the navbar respond to scroll
-document.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 0) {
-      navbar.classList.add("scrolled");
-  } else {
-      navbar.classList.remove("scrolled");
-  }
-});
-
-// JavaScript to display greeting based on the user's time
-window.addEventListener("DOMContentLoaded", () => {
-  const greetingContainer = document.createElement("div");
-  greetingContainer.className = "greeting";
-  const hours = new Date().getHours();
-  let greeting;
-
-  if (hours < 12) {
-      greeting = "Good Morning!";
-  } else if (hours < 18) {
-      greeting = "Good Afternoon!";
-  } else {
-      greeting = "Good Evening!";
-  }
-
-  greetingContainer.textContent = greeting;
-  const heroSection = document.querySelector(".hero");
-  heroSection.prepend(greetingContainer);
-});
-
-document.addEventListener('DOMContentLoaded', () => {
+ // Toggle mobile menu
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
 
-  // Add click event listener to the hamburger menu
   hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active'); // Toggles hamburger animation
-    navLinks.classList.toggle('active'); // Toggles the visibility of nav-links
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
   });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-  const navbar = document.querySelector('.navbar');
-
+  // Navbar scroll effect
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('scrolled', window.scrollY > 10);
   });
-});
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Fake form submission with reset and alert
+  const form = document.querySelector('.contact-form');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('Thanks for your message, I’ll get back to you soon!');
+    form.reset();
+  });
