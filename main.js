@@ -31,3 +31,10 @@
     alert('Thanks for your message, I’ll get back to you soon!');
     form.reset();
   });
+
+    const redirectInput = document.getElementById('redirectInput');
+  const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
+
+  redirectInput.value = isLocal
+    ? "http://127.0.0.1:5500/thank-you.html"
+    : "https://shawnsportfoliosite.netlify.app/thank-you.html";

@@ -26,10 +26,12 @@ body {
   background: var(--light-gray);
 }
 
+
 a {
   color: var(--primary-color);
   text-decoration: none;
   transition: color 0.3s ease;
+ 
 }
 
 a:hover {
@@ -435,4 +437,171 @@ h2 {
   .about p {
     font-size: 0.95em;
   }
+}
+/* Form Section Wrapper */
+.form-section {
+  padding: 4em 2em;
+  background: #fff;
+  text-align: center;
+}
+
+/* Section Heading */
+.form-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 2em;
+  color: var(--primary-color);
+}
+
+/* Form Styles */
+.custom-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+  padding: 2em;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+/* Label Styling */
+.form-label {
+  font-weight: bold;
+  text-align: left;
+  display: block;
+  margin-bottom: 0.3em;
+  color: var(--dark-gray);
+}
+
+/* Input + Textarea */
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: var(--font-family);
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+/* Focus State */
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+}
+
+/* Submit Button */
+.form-submit {
+  padding: 1em;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: var(--box-shadow);
+}
+
+.form-submit:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  .custom-form {
+    padding: 1.5em;
+  }
+
+  .form-section h2 {
+    font-size: 2em;
+  }
+
+  .form-submit {
+    font-size: 1em;
+  }
+}
+.thank-you-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-gray);
+  padding: 2em;
+}
+
+  .thank-you-wrapper {
+      background: #fff;
+      padding: 3em;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    .thank-you-title {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .thank-you-text {
+      font-size: 1.1rem;
+      color: var(--dark-gray);
+      margin-bottom: 2rem;
+    }
+
+    .return-home-link {
+      display: inline-block;
+      padding: 0.75em 1.5em;
+      background-color: var(--primary-color);
+      color: #fff;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .return-home-link:hover {
+      background-color: var(--primary-hover);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+ .contact-button {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  background-color: var(--primary-color);
+  color: white !important; /* Ensure black text */
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  margin: 0.5em 0;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: var(--box-shadow);
+  text-decoration: none ;
+}
+
+.contact-button:hover {
+  background-color: var(--primary-hover);
+  color: white !important; /* Stay black on hover */
+  transform: translateY(-2px);
+  text-decoration: none;
 }
